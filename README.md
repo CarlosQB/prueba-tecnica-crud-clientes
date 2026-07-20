@@ -5,8 +5,16 @@ Aplicación web Full Stack para la gestión de clientes mediante operaciones CRU
 Desarrollada con **Vue 3 y TypeScript** en el frontend, y **Node.js, Express, Sequelize y SQLite** en el backend.
 
 ---
+## Requisitos previos
 
+Es necesario tener instalado:
+
+- Node.js 20 o superior
+- npm
+- Git
+  
 ## Tecnologías
+
 
 ### Backend
 - Node.js
