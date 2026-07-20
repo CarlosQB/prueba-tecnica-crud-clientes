@@ -5,18 +5,11 @@ Aplicación web Full Stack para la gestión de clientes mediante operaciones CRU
 Desarrollada con **Vue 3 y TypeScript** en el frontend, y **Node.js, Express, Sequelize y SQLite** en el backend.
 
 ---
-## Requisitos previos
 
-Es necesario tener instalado:
-
-- Node.js 20 o superior
-- npm
-- Git
-  
 ## Tecnologías
 
-
 ### Backend
+
 - Node.js
 - TypeScript
 - Express
@@ -25,6 +18,7 @@ Es necesario tener instalado:
 - Sequelize CLI
 
 ### Frontend
+
 - Vue 3
 - TypeScript
 - Vite
@@ -57,7 +51,7 @@ Es necesario tener instalado:
 | `telefono` | Teléfono. Opcional |
 | `empresa` | Empresa. Requerido |
 
-En el frontend, nombre y apellidos se solicitan por separado y se combinan antes de enviarse al backend como `nombre_completo`.
+En el frontend, el nombre y los apellidos se solicitan por separado y se combinan antes de enviarse al backend como `nombre_completo`.
 
 ---
 
@@ -65,13 +59,17 @@ En el frontend, nombre y apellidos se solicitan por separado y se combinan antes
 
 ## Requisitos previos
 
-Es necesario tener instalado:
+Antes de instalar y ejecutar el proyecto, se recomienda contar con:
 
-- Node.js
-- npm
-- Git
+- **Node.js 22.12 o superior** (recomendado: Node.js 22 LTS)
+- **npm 10 o superior**
+- **Git**
 
-No es necesario instalar un servidor de base de datos. El proyecto utiliza **SQLite** y la base de datos se genera localmente mediante las migraciones.
+El proyecto fue probado con **Node.js 22.14.0 en Windows 11**.
+
+No es necesario instalar un servidor de base de datos externo. El proyecto utiliza **SQLite** y la base de datos se genera localmente mediante las migraciones.
+
+> El proyecto utiliza `sqlite3`, que es un módulo nativo. En la mayoría de los casos, `npm install` descargará automáticamente un binario precompilado. Si la instalación falla en una plataforma o versión de Node sin un binario compatible, puede ser necesario contar con herramientas de compilación instaladas. Se recomienda utilizar una versión LTS de Node.js.
 
 ---
 
@@ -111,7 +109,7 @@ Ejecuta las migraciones para crear la base de datos SQLite y sus tablas:
 npm run db:migrate
 ```
 
-Inicia el servidor:
+Inicia el servidor en modo desarrollo:
 
 ```bash
 npm run dev
@@ -124,6 +122,8 @@ http://localhost:5000
 ```
 
 Mantén esta terminal abierta.
+
+> El puerto del backend puede configurarse mediante la variable de entorno `PORT`. Si no se especifica, se utilizará el puerto `5000`.
 
 ---
 
@@ -140,6 +140,24 @@ Instala las dependencias:
 ```bash
 npm install
 ```
+
+Crea el archivo `.env` utilizando `.env.example` como referencia.
+
+En Linux o macOS:
+
+```bash
+cp .env.example .env
+```
+
+En Windows, puedes copiar manualmente el archivo `.env.example` y renombrarlo como `.env`.
+
+El archivo `.env` debe contener:
+
+```env
+VITE_API_URL=http://localhost:5000
+```
+
+Esta variable define la URL del backend que será utilizada por el frontend.
 
 Inicia el frontend:
 
@@ -190,45 +208,53 @@ Ejemplo para crear un cliente:
 
 ## Scripts del Backend
 
+### Ejecutar en modo desarrollo
+
 ```bash
 npm run dev
 ```
 
-Ejecuta el servidor en modo desarrollo.
+### Compilar TypeScript
 
 ```bash
 npm run build
 ```
 
-Compila el proyecto TypeScript.
+### Ejecutar la versión compilada
+
+Después de ejecutar `npm run build`:
+
+```bash
+npm start
+```
+
+### Ejecutar migraciones pendientes
 
 ```bash
 npm run db:migrate
 ```
 
-Ejecuta las migraciones pendientes.
+### Revertir la última migración
 
 ```bash
 npm run db:migrate:undo
 ```
 
-Revierte la última migración.
-
 ---
 
 ## Scripts del Frontend
+
+### Ejecutar en modo desarrollo
 
 ```bash
 npm run dev
 ```
 
-Ejecuta el servidor de desarrollo con Vite.
+### Generar el build de producción
 
 ```bash
 npm run build
 ```
-
-Genera el build de producción.
 
 ---
 
@@ -238,16 +264,17 @@ Genera el build de producción.
 - Frontend: `http://localhost:5173`
 - La base de datos SQLite se crea al ejecutar las migraciones.
 - `node_modules` y la base de datos local no están incluidos en el repositorio.
+- La URL del backend utilizada por el frontend se configura mediante `VITE_API_URL`.
+- El puerto del backend puede configurarse mediante la variable de entorno `PORT`. Si no se especifica, se utilizará el puerto `5000`.
 
 ---
+
 ## Documentación adicional
 
-Para consultar información sobre la estructura del proyecto, arquitectura y decisiones técnicas, revisar el archivo [`DOCUMENTACION.md`](./DOCUMENTACION.md).
+Para consultar información sobre la estructura del proyecto, arquitectura, decisiones técnicas y uso de Inteligencia Artificial durante el desarrollo, revisar el archivo [`DOCUMENTACION.md`](./DOCUMENTACION.md).
+
+---
 
 ## Autor
 
-Jose Carlos Quezada Benavides
-
-## Uso de Inteligencia Artificial
-
-Para el desarrollo de esta prueba técnica se utilizó **ChatGPT (OpenAI)** como herramienta de apoyo para consultas, revisión de código y asistencia durante el desarrollo y documentación del proyecto.
+Jose Carlos Quezada Benavides revisión de código y asistencia durante el desarrollo y documentación del proyecto.
