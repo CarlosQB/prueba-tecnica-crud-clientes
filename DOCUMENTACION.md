@@ -52,3 +52,12 @@ prueba-tecnica-crud-clientes/
 - `src/main.ts`: punto de entrada del frontend.
 
 Esta estructura permite separar responsabilidades y mantener el código organizado, facilitando su mantenimiento y comprensión.
+
+## Autor
+
+Jose Carlos Quezada Benavides
+
+## Uso de Inteligencia Artificial
+
+Para el desarrollo de esta prueba técnica se utilizó **ChatGPT (OpenAI)** como herramienta de apoyo para consultas, revisión de código y asistencia durante el desarrollo y documentación del proyecto.
+
