@@ -59,9 +59,10 @@ En el frontend, el nombre y los apellidos se solicitan por separado y se combina
 
 ## Requisitos previos
 
-Antes de instalar y ejecutar el proyecto, se recomienda contar con:
+Antes de instalar y ejecutar el proyecto, es necesario contar con:
 
-- **Node.js 22.12 o superior** (recomendado: Node.js 22 LTS)
+- **Node.js 20.19.0 o superior, o Node.js 22.12.0 o superior**
+- **Recomendado: Node.js 22 LTS**
 - **npm 10 o superior**
 - **Git**
 
@@ -69,7 +70,7 @@ El proyecto fue probado con **Node.js 22.14.0 en Windows 11**.
 
 No es necesario instalar un servidor de base de datos externo. El proyecto utiliza **SQLite** y la base de datos se genera localmente mediante las migraciones.
 
-> El proyecto utiliza `sqlite3`, que es un módulo nativo. En la mayoría de los casos, `npm install` descargará automáticamente un binario precompilado. Si la instalación falla en una plataforma o versión de Node sin un binario compatible, puede ser necesario contar con herramientas de compilación instaladas. Se recomienda utilizar una versión LTS de Node.js.
+> El proyecto utiliza `sqlite3`, que es un módulo nativo. Normalmente `npm install` descargará automáticamente un binario precompilado. Si la instalación falla en una plataforma o versión de Node sin un binario compatible, puede ser necesario contar con herramientas de compilación instaladas. Se recomienda utilizar una versión LTS de Node.js.
 
 ---
 
@@ -115,7 +116,7 @@ Inicia el servidor en modo desarrollo:
 npm run dev
 ```
 
-El backend estará disponible en:
+El backend estará disponible por defecto en:
 
 ```text
 http://localhost:5000
@@ -135,21 +136,19 @@ Abre una **segunda terminal** y entra a la carpeta `frontend` desde la raíz del
 cd frontend
 ```
 
-Instala las dependencias:
+Antes de instalar y ejecutar el frontend, crea el archivo de variables de entorno a partir del archivo `.env.example`.
 
-```bash
-npm install
-```
-
-Crea el archivo `.env` utilizando `.env.example` como referencia.
-
-En Linux o macOS:
+### Linux / macOS
 
 ```bash
 cp .env.example .env
 ```
 
-En Windows, puedes copiar manualmente el archivo `.env.example` y renombrarlo como `.env`.
+### Windows PowerShell
+
+```powershell
+Copy-Item .env.example .env
+```
 
 El archivo `.env` debe contener:
 
@@ -157,7 +156,13 @@ El archivo `.env` debe contener:
 VITE_API_URL=http://localhost:5000
 ```
 
-Esta variable define la URL del backend que será utilizada por el frontend.
+Esta variable define la URL del backend utilizada por el frontend.
+
+A continuación, instala las dependencias:
+
+```bash
+npm install
+```
 
 Inicia el frontend:
 
@@ -179,7 +184,7 @@ Abre esa dirección en el navegador.
 
 # Endpoints de la API
 
-URL base:
+URL base por defecto:
 
 ```text
 http://localhost:5000/clientes
@@ -260,12 +265,13 @@ npm run build
 
 ## Notas
 
-- Backend: `http://localhost:5000`
-- Frontend: `http://localhost:5173`
+- El backend utiliza por defecto `http://localhost:5000`.
+- El frontend utiliza normalmente `http://localhost:5173`.
 - La base de datos SQLite se crea al ejecutar las migraciones.
-- `node_modules` y la base de datos local no están incluidos en el repositorio.
+- `node_modules`, `.env` y la base de datos local no están incluidos en el repositorio.
+- El archivo `.env.example` sirve como referencia para configurar las variables de entorno del frontend.
 - La URL del backend utilizada por el frontend se configura mediante `VITE_API_URL`.
-- El puerto del backend puede configurarse mediante la variable de entorno `PORT`. Si no se especifica, se utilizará el puerto `5000`.
+- El puerto del backend puede configurarse mediante la variable de entorno `PORT`. Si no se especifica, se utiliza el puerto `5000`.
 
 ---
 
@@ -277,4 +283,4 @@ Para consultar información sobre la estructura del proyecto, arquitectura, deci
 
 ## Autor
 
-Jose Carlos Quezada Benavides revisión de código y asistencia durante el desarrollo y documentación del proyecto.
+Jose Carlos Quezada Benavides
