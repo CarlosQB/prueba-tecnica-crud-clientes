@@ -240,6 +240,9 @@ Genera el build de producción.
 - `node_modules` y la base de datos local no están incluidos en el repositorio.
 
 ---
+## Documentación adicional
+
+Para consultar información sobre la estructura del proyecto, arquitectura y decisiones técnicas, revisar el archivo [`DOCUMENTACION.md`](./DOCUMENTACION.md).
 
 ## Autor
 
