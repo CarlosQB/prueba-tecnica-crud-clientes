@@ -235,4 +235,8 @@ Genera el build de producción.
 
 ## Autor
 
-Carlos Quezada
+Jose Carlos Quezada Benavides
+
+## Uso de Inteligencia Artificial
+
+Para el desarrollo de esta prueba técnica se utilizó **ChatGPT (OpenAI)** como herramienta de apoyo para consultas, revisión de código y asistencia durante el desarrollo y documentación del proyecto.
