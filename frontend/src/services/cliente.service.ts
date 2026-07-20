@@ -5,7 +5,7 @@ import type {
   ClientePayload,
 } from "../types/cliente";
 
-const API_URL = "http://localhost:5000/clientes";
+const API_URL = `${import.meta.env.VITE_API_URL}/clientes`;
 
 export const obtenerClientes = async (): Promise<Cliente[]> => {
   const respuesta = await axios.get<Cliente[]>(API_URL);
