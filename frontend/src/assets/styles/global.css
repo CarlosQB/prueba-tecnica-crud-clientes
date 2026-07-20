@@ -1,0 +1,114 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background: #f1f5f9;
+  font-family:
+    Inter,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+  color: #0f172a;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+#app {
+  min-height: 100vh;
+}
+
+.app-page {
+  min-height: 100vh;
+}
+
+.app-header {
+  padding: 48px 24px 30px;
+}
+
+.app-header > div {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.app-eyebrow {
+  display: block;
+  margin-bottom: 8px;
+  color: #2563eb;
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.app-header h1 {
+  margin: 0;
+  color: #0f172a;
+  font-size: clamp(2rem, 4vw, 3rem);
+}
+
+.app-header p {
+  margin: 10px 0 0;
+  color: #64748b;
+  font-size: 1rem;
+}
+
+.app-content {
+  display: grid;
+  gap: 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px 50px;
+}
+
+.app-message {
+  padding: 14px 16px;
+  border: 1px solid;
+  border-radius: 12px;
+  font-weight: 600;
+}
+
+.app-message--success {
+  background: #ecfdf5;
+  border-color: #a7f3d0;
+  color: #047857;
+}
+
+.app-message--info {
+  background: #eff6ff;
+  border-color: #bfdbfe;
+  color: #1d4ed8;
+}
+
+.app-message--error {
+  background: #fef2f2;
+  border-color: #fecaca;
+  color: #dc2626;
+}
+
+.loading-state {
+  padding: 30px;
+  border-radius: 18px;
+  background: #ffffff;
+  color: #64748b;
+  text-align: center;
+  border: 1px solid #e5e7eb;
+}
+
+@media (max-width: 720px) {
+  .app-header {
+    padding: 32px 16px 22px;
+  }
+
+  .app-content {
+    padding: 0 16px 32px;
+  }
+}
