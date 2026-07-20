@@ -1,21 +1,44 @@
 # Documentación del proyecto
 
+## Descripción general
+
+Este proyecto corresponde a una aplicación web Full Stack para la gestión de clientes mediante operaciones CRUD.
+
+La aplicación permite registrar, consultar, buscar, editar y eliminar clientes desde una interfaz web.
+
+El proyecto está dividido en dos partes principales:
+
+- `backend`: encargado de la API, la lógica del sistema y la persistencia de datos.
+- `frontend`: encargado de la interfaz de usuario y la comunicación con la API.
+
+---
+
 ## Estructura del proyecto
 
-Aquí explicas las carpetas y archivos principales del backend y frontend.
-
-## Arquitectura
-
-Explicas el flujo:
-
-Frontend → Axios → Routes → Controller → Service → Sequelize → SQLite
-
-## Decisiones técnicas
-
-Explicas brevemente por qué utilizaste SQLite, TypeScript, separación por capas, composables, etc.
-
-## Uso de Inteligencia Artificial
-
-Para el desarrollo de esta prueba técnica se utilizó **ChatGPT (OpenAI)** como herramienta de apoyo para consultas, revisión de código, organización de la estructura del proyecto y documentación.
-
-La herramienta fue utilizada como asistencia durante el proceso de desarrollo.
+```text
+prueba-tecnica-crud-clientes/
+├── backend/
+│   ├── config/
+│   ├── migrations/
+│   ├── src/
+│   │   ├── controllers/
+│   │   ├── db/
+│   │   ├── models/
+│   │   ├── routes/
+│   │   ├── services/
+│   │   └── app.ts
+│   └── package.json
+│
+├── frontend/
+│   ├── src/
+│   │   ├── assets/
+│   │   ├── components/
+│   │   ├── composables/
+│   │   ├── services/
+│   │   ├── types/
+│   │   ├── App.vue
+│   │   └── main.ts
+│   └── package.json
+│
+├── README.md
+└── DOCUMENTACION.md
